@@ -9,7 +9,6 @@ fs.readFile('list.txt', 'utf8', (err, data) => {
 
     lines.forEach(line => {
         const [num1, num2] = line.split("   ").map(Number)
-        const diff = getDifference(num1, num2)
         array1.push(num1)
         array2.push(num2)
     });
