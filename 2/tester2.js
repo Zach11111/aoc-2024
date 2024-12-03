@@ -8,7 +8,8 @@ fs.readFile('input.txt', 'utf8', (err, data) => {
     let total = 0
 
     lines.forEach(line => {
-        const isSafe = checkLine(line);
+        const numbers = line.split(' ').map(Number);
+        const isSafe = checkLine(numbers);
         if (isSafe) {
         total++
         }
@@ -16,9 +17,7 @@ fs.readFile('input.txt', 'utf8', (err, data) => {
     });
 });
 
-function checkLine(line) {
-    const numbers = line.split(' ').map(Number);
-
+function checkLine(numbers) {
     if (isSafe(numbers)) {
         return true;
     }
@@ -29,7 +28,6 @@ function checkLine(line) {
             return true;
         }
     }
-
     return false;
 }
 
